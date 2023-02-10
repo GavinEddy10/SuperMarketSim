@@ -1,0 +1,37 @@
+## Project Notes
+### Project Summary
+Simulate a supermarket where customers enter according to some random interval,
+shop for a random interval of time, get in line to check out,
+and then when it is their turn, check out for a random interval of time.
+
+### Classes
+* Customer (threaded)
+* CustomerFactory (not threaded)
+* Cashiers (threaded)
+  * This needs to be written
+
+### Data Structures
+* ArrayList of Customers
+* queue (line of customers) to hold customers as they wait for check out
+  * Use a concurentLinkedQueue, which is Thread safe, can't look at same cashier at same time
+
+### Key Terms
+* Thread - A piece of code, an object etc. that will run on its own
+processor thread.
+* Serializable - a function or data structure that is thread safe
+  * locks and unlocks access as different threads interact with it
+  * two things can't interact with same thing at same time
+
+### End Result
+* Run Simulation for a given number of ms
+* A list of stats
+  * total customers
+  * total num of cashiers used
+  * average shop time per customer
+  * average process time per customer
+  * average wait time in the queue per customer
+    * not implemented
+    * we need to add timestamps to customer when they
+      * enter the queue
+      *exit the queue
+    * average down-time per Cashier(stretch goal)
